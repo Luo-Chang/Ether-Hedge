@@ -1,0 +1,90 @@
+<head>
+<link href="https://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
+<script>
+$(function(){
+    setInterval(function() {
+    $("#div1").load("/phase_2");
+}, 2000);
+});
+</script>
+</head>
+
+<div class="container" id="div1">
+	<div class="row">
+		<div class="span12">
+			<h3 class="text-center">
+				Ether-Hedge 演示
+			</h3>
+			<h4>
+				Phase 2 封闭阶段
+			</h4>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							<span>项目</span>
+						</th>
+						<th>
+							总额
+						</th>
+						<th>
+							<span>盈亏</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							资金池
+						</td>
+						<td>
+							{{ v_all }}
+						</td>
+						<td>
+							{{ p_all }}
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							{{ account_1 }}
+						</td>
+						<td>
+							{{ v_1 }}
+						</td>
+						<td>
+							{{ p_1 }}
+						</td>
+					</tr>
+					<tr class="error">
+						<td>
+							{{ account_2 }}
+						</td>
+						<td>
+							{{ v_2 }}
+						</td>
+						<td>
+							{{ p_2 }}
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							{{ account_3 }}
+						</td>
+						<td>
+							{{ v_3 }}
+						</td>
+						<td>
+							{{ p_3 }}
+						</td>
+					</tr>
+				</tbody>
+			</table> 
+			<form action="phase_3" method="post">
+			<button class="btn" type="submit">清算</button>
+		</form>
+		</div>
+	</div>
+</div>
