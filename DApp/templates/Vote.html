@@ -1,0 +1,83 @@
+<head>
+<link href="https://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+ <div class="container">
+  <div class="row">
+    <div class="span12">
+      <h3 class="text-center">
+        <legend>策略投票</legend>
+      </h3>
+      <h3 class="text-center" color="red">
+        {{ vote_result }}
+      </h3>
+      <ul class="thumbnails">
+        <li class="span4">
+          <div class="thumbnail">
+            <img alt="300x200" src="{{ url_for('static', filename = 'factor.png') }}" />
+            <div class="caption">
+              <h3>
+                多因子策略
+              </h3>
+              <p>
+                一种应用十分广泛的选股策略，其基本思构想就是找到某些和收益率最相关的指标，并根据该指标，建一个股票组合。
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="span4">
+          <div class="thumbnail">
+            <img alt="300x200" src="{{ url_for('static', filename = 'ml.png') }}" />
+            <div class="caption">
+              <h3>
+                机器学习策略
+              </h3>
+              <p>
+                传统策略是通过建立数学模型找出市场的规律，往往会接近某一个局部的最优。真正的全局最优或许在我们的经验认知之外。
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="span4">
+          <div class="thumbnail">
+            <img alt="300x200" src="{{ url_for('static', filename = 'turtle.png') }}" />
+            <div class="caption">
+              <h3>
+                海龟交易策略
+              </h3>
+              <p>
+                当收盘价大于过去20个交易日中的最高价时以收盘价买入，当收盘价小于过去10个交易日中的最低价时以收盘价卖出。
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <form class="form" method="post">
+        <div class="control-group">
+           <label class="control-label" for="inputAccount">账户</label>
+          <div class="controls">
+            <input name="inputAccount" id="inputAccount" type="text" />
+          </div>
+        </div>
+        <div class="control-group">
+           <label class="control-label" for="inputProposal">意向策略</label>
+          <div class="controls">
+            <input name="inputProposal" id="inputProposal" type="text" />
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+          <button type="submit" class="btn">提交</button>
+          </div>
+        </div>
+      </form>
+      <form action="result" method="post">
+      <button class="btn" type="submit">显示结果</button>
+    </form>
+    </div>
+  </div>
+</div>
+</body>
